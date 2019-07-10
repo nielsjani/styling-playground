@@ -1,0 +1,180 @@
+<!--https://css-tricks.com/snippets/css/a-guide-to-flexbox-->
+<div class="flex-container justify-center">
+  <button class="toggle-button" [ngStyle]="{'background-color': determineBackground(showBasic)}"
+          (click)="showBasic = !showBasic">Basic
+  </button>
+  <button class="toggle-button" [ngStyle]="{'background-color': determineBackground(showJustify)}"
+          (click)="showJustify = !showJustify">Justify
+  </button>
+  <button class="toggle-button" [ngStyle]="{'background-color': determineBackground(showItems)}"
+          (click)="showItems = !showItems">Items
+  </button>
+</div>
+
+<div *ngIf="showBasic">
+  <h2>Default</h2>
+  <!--By default there is no line wrapping, even if total length would go over 100%-->
+
+  <div class="flex-container">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="red small-item">10</div>
+  </div>
+
+  <h2>Wrap</h2>
+
+  <div class="flex-container flex-wrap">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="red small-item">10</div>
+  </div>
+
+  <h2>Column view</h2>
+
+  <div class="flex-container flex-column">
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="blue medium-item">20</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="green large-item">30</div>
+  </div>
+
+  <h2>Reverse column view</h2>
+
+  <div class="flex-container flex-column-reverse">
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="blue medium-item">20</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="green large-item">30</div>
+  </div>
+</div>
+
+<div *ngIf="showJustify">
+
+  <h2>Horizontal alignment</h2>
+
+  <div class="flex-container justify-start lil-margin">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+  </div>
+
+  <div class="flex-container justify-end lil-margin">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+  </div>
+
+  <div class="flex-container justify-space-evenly lil-margin">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+  </div>
+
+  <h2>Vertical alignment</h2>
+
+  <!--stretch is the default-->
+
+  <div class="flex-container lil-margin align-bottom">
+    <div class="red small-item high">10</div>
+    <div class="blue small-item higher">20</div>
+    <div class="green small-item highest">30</div>
+  </div>
+
+  <div class="flex-container lil-margin align-center">
+    <div class="red small-item high">10</div>
+    <div class="blue small-item higher">20</div>
+    <div class="green small-item highest">30</div>
+  </div>
+
+
+
+  <h2>Alignment after wrapping over multiple lines</h2>
+
+  <div class="flex-container lil-margin flex-wrap align-content-end" style="height: 200px; border: 2px solid blue">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="red small-item">10</div>
+  </div>
+
+  <div class="flex-container lil-margin flex-wrap align-content-end justify-end" style="height: 200px; border: 2px solid blue">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="red small-item">10</div>
+  </div>
+
+  <div class="flex-container lil-margin flex-wrap align-content-center" style="height: 200px; border: 2px solid blue">
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="blue medium-item">20</div>
+    <div class="green large-item">30</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+    <div class="red small-item">10</div>
+  </div>
+</div>
+
+<div *ngIf="showItems">
+  <div class="flex-container lil-margin" style="height: 200px; border: 2px solid blue">
+    <div class="red small-item grow-max">10</div>
+    <div class="blue medium-item grow-max">20</div>
+    <div class="green large-item grow-max">30</div>
+  </div>
+
+  <div class="flex-container lil-margin" style="height: 200px; border: 2px solid blue">
+    <div class="red small-item grow-a-bit">10</div>
+    <div class="blue medium-item grow-a-bit">20</div>
+    <div class="red small-item">10</div>
+    <div class="blue medium-item">20</div>
+  </div>
+
+  <div class="flex-container lil-margin" style="height: 200px; border: 2px solid blue">
+    <div class="red small-item-flex ">10</div>
+    <div class="blue medium-item-flex ">20</div>
+    <div class="green large-item-flex ">30</div>
+  </div>
+
+  <div class="flex-container lil-margin" style="height: 200px; border: 2px solid blue">
+    <div class="red small-item-flex" style="align-self:flex-start">10</div>
+    <div class="blue medium-item-flex" style="align-self: center">20</div>
+    <div class="blue medium-item-flex ">20</div>
+    <div class="green large-item-flex" style="align-self:flex-end">30</div>
+  </div>
+</div>
