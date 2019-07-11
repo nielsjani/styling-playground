@@ -6,17 +6,32 @@ import { FlexBoxComponent } from './flex-box/flex-box.component';
 import { GridComponent } from './grid/grid.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AngularAnimationsComponent } from './angular-animations/angular-animations.component';
+import {RouterModule, Routes} from '@angular/router';
+import { RoutingAnimationsFromComponent } from './routing-animations/routing-animations-from/routing-animations-from.component';
+import { RoutingAnimationsToComponent } from './routing-animations/routing-animations-to/routing-animations-to.component';
+import { AnimateTooComponent } from './routing-animations/animate-too/animate-too.component';
+
+const routes: Routes = [
+  {path: '', component: RoutingAnimationsFromComponent},
+  {path: 'animate', component: RoutingAnimationsToComponent, data: {animation: 'AnimatePageAnimation'} },
+  {path: 'animate-too', component: AnimateTooComponent, data: {animation: 'AnimateTooPageAnimation'} },
+  {path: '**', redirectTo: '', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     FlexBoxComponent,
     GridComponent,
-    AngularAnimationsComponent
+    AngularAnimationsComponent,
+    RoutingAnimationsFromComponent,
+    RoutingAnimationsToComponent,
+    AnimateTooComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

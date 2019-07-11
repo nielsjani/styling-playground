@@ -1,3 +1,7 @@
 <!--<app-flex-box></app-flex-box>-->
 <!--<app-grid></app-grid>-->
-<app-angular-animations></app-angular-animations>
+<!--<app-angular-animations></app-angular-animations>-->
+
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
