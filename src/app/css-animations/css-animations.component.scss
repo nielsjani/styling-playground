@@ -1,0 +1,64 @@
+.container {
+  height: 100vh;
+  background-color: lightgray;
+
+  // so container does not expand horizontally when slideout element hits right border
+  overflow: hidden;
+  position: relative;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes slideout {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  background-color: aquamarine;
+  transform-origin: center;
+  animation: spin 2000ms linear infinite;
+}
+
+.slideout {
+  //  so text does not wrap when it hits the right border
+  white-space: nowrap;
+  position: absolute;
+  animation: slideout 8000ms linear ;
+  //so animation does not reset the location of the elemnt after finishing
+  animation-fill-mode: forwards;
+}
+
+.slidein {
+  //  so text does not wrap when it hits the right border
+  white-space: nowrap;
+  position: absolute;
+  animation: slidein 8000ms linear ;
+  //so animation does not reset the location of the elemnt after finishing
+  animation-fill-mode: forwards;
+}
+
+

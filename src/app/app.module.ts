@@ -10,6 +10,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { RoutingAnimationsFromComponent } from './routing-animations/routing-animations-from/routing-animations-from.component';
 import { RoutingAnimationsToComponent } from './routing-animations/routing-animations-to/routing-animations-to.component';
 import { AnimateTooComponent } from './routing-animations/animate-too/animate-too.component';
+import { CssAnimationsComponent } from './css-animations/css-animations.component';
 
 const routes: Routes = [
   {path: '', component: RoutingAnimationsFromComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
     AngularAnimationsComponent,
     RoutingAnimationsFromComponent,
     RoutingAnimationsToComponent,
-    AnimateTooComponent
+    AnimateTooComponent,
+    CssAnimationsComponent
   ],
   imports: [
     BrowserModule,
