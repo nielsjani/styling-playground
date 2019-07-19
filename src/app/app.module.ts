@@ -11,6 +11,8 @@ import { RoutingAnimationsFromComponent } from './routing-animations/routing-ani
 import { RoutingAnimationsToComponent } from './routing-animations/routing-animations-to/routing-animations-to.component';
 import { AnimateTooComponent } from './routing-animations/animate-too/animate-too.component';
 import { CssAnimationsComponent } from './css-animations/css-animations.component';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import { LodashComponent } from './lodash/lodash.component';
 
 const routes: Routes = [
   {path: '', component: RoutingAnimationsFromComponent},
@@ -28,7 +30,9 @@ const routes: Routes = [
     RoutingAnimationsFromComponent,
     RoutingAnimationsToComponent,
     AnimateTooComponent,
-    CssAnimationsComponent
+    CssAnimationsComponent,
+    BootstrapComponent,
+    LodashComponent
   ],
   imports: [
     BrowserModule,
