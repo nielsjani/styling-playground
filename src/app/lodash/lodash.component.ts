@@ -18,6 +18,7 @@ export class LodashComponent implements OnInit {
     // this.lodashArray();
     // this.lodashCollection();
     // this.lodashNumber();
+
     this.lodashString();
   }
 
